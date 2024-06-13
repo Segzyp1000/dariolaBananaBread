@@ -5,7 +5,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import React from "react";
-import { CartProvider } from "./CartContext";
 import MainPage from "./Layout/MainPage";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
@@ -22,11 +21,7 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-  return (
-    <CartProvider>
-      <RouterProvider router={router} />;
-    </CartProvider>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

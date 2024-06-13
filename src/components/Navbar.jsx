@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-center  p-3">
       <div className="flex ml-2 md:ml-12">
         <img src={HotPot} alt="" />
         <h1 className="text-navColor font-bold">Dariola Banana Bread</h1>

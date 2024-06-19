@@ -71,15 +71,15 @@ const ContactPage = () => {
 
               <div className="sm:col-span-3">
                 <label
-                  for="country"
+                  for="bread"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
                   Select your preferred banana bread
                 </label>
                 <div className="mt-2">
                   <select
-                    id="name"
-                    name="name"
+                    id="product"
+                    name="product"
                     autocomplete="banana-bread"
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                   >
@@ -91,6 +91,33 @@ const ContactPage = () => {
                     <option>Marble Banana Bread</option>
                     <option>Double Chocolate Banana Bread</option>
                     <option>Cashew Banana Bread</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="sm:col-span-3">
+                <label
+                  for="number"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Quantity
+                </label>
+                <div className="mt-2">
+                  <select
+                    id="number"
+                    autocomplete="number"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
+                  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
                   </select>
                 </div>
               </div>

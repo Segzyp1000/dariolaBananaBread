@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import productArray from "./App";
 
 export const CartContext = createContext({
   items: [],
@@ -63,11 +64,22 @@ export const CartProvider = ({ children }) => {
   const getTotalCost = () => {
     let totalCost = 0;
     cartProducts.map((cartItem) => {
-      const productData = getProductArray(cartItem.id);
+      const productData = productArray(cartItem.id);
       totalCost += productData.price * cartItem.quantity;
     });
     return totalCost;
   };
+
+  // const getTotalCost = (cart) => {
+  //   let totalCost = 0;
+  //   cart.items.forEach((item) => {
+  //     const productData = productArray.find(
+  //       (product) => product.id === item.id
+  //     );
+  //     totalCost += productData.price * item.quantity;
+  //   });
+  //   return totalCost;
+  // };
 
   const contextValue = {
     items: cartProducts,

@@ -12,8 +12,6 @@ import { productArray } from "../App";
 
 const Menu = () => {
   const cart = useContext(CartContext);
-  const product = productArray[0]; // Define the product variable here
-  const productQuantity = cart.getProductQuantity(product.id);
   console.log(cart.items);
   const productImages = {
     "Oreos Banana Bread": Oreos,

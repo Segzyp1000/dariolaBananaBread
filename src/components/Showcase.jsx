@@ -13,9 +13,10 @@ const Showcase = () => {
           </h1>
         </span>
         <p className="mt-3 py-4 w-auto">
-          Our job is to filling your tummy with delicious banana bread and{" "}
+          Our job is to filling your tummy with delicious banana bread and
           <p>with fast and free delivery</p>
         </p>
+
         <a
           href="#menu"
           className="p-2 rounded-lg bg-navColor text-white  hover:text-black"

@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import HotPot from "../assets/HotPot.png";
+import { FaShoppingCart } from "react-icons/fa";
+import { CartContext } from "../CartContext";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const cart = useContext(CartContext);
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const productCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
 
   return (
     <nav className="flex justify-between items-center p-3">
@@ -24,11 +33,12 @@ const Navbar = () => {
         <Link to="/contact" className="hover:text-slate-400">
           Order
         </Link>
+
         <Link
-          to="/signup"
-          className="px-2 rounded-lg bg-navColor text-white hover:text-black"
+          to="/cartpage"
+          className="px-2 mx-2 rounded-lg bg-navColor text-white hover:text-black flex gap-2"
         >
-          Cart
+          <FaShoppingCart className="mt-1" /> ({productCount} items)
         </Link>
       </div>
 
@@ -62,15 +72,19 @@ const Navbar = () => {
         </button>
       </div>
       {menuOpen && (
-        <div className="md:hidden flex flex-col space-y-4   rounded-lg text-navColor">
+        <div className="md:hidden flex flex-col space-y-4  text-navColor">
           <Link to="/" onClick={toggleMenu}>
             Home
           </Link>
           <Link to="/contact" onClick={toggleMenu}>
             Contact
           </Link>
-          <Link to="/signup" className="p-2 rounded-lg text-white bg-navColor">
-            Cart
+
+          <Link
+            to="/cartpage"
+            className="px-2 rounded-lg bg-navColor text-white hover:text-black"
+          >
+            <FaShoppingCart className="mt-1" /> ({productCount} items)
           </Link>
         </div>
       )}

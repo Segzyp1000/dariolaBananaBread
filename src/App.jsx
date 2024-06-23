@@ -8,7 +8,7 @@ import React from "react";
 import MainPage from "./Layout/MainPage";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
-import SignupPage from "./pages/SignupPage";
+import CartPage from "./pages/CartPage";
 import CartProvider from "./CartContext";
 
 export const productArray = [
@@ -27,7 +27,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<MainPage />}>
       <Route index element={<HomePage />} />
       <Route path="/contact" element={<ContactPage />} />
-      <Route path="/signup" element={<SignupPage />} />
+      <Route path="/cartpage" element={<CartPage />} />
     </Route>
   )
 );

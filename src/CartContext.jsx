@@ -70,17 +70,6 @@ export const CartProvider = ({ children }) => {
     return totalCost;
   };
 
-  // const getTotalCost = (cart) => {
-  //   let totalCost = 0;
-  //   cart.items.forEach((item) => {
-  //     const productData = productArray.find(
-  //       (product) => product.id === item.id
-  //     );
-  //     totalCost += productData.price * item.quantity;
-  //   });
-  //   return totalCost;
-  // };
-
   const contextValue = {
     items: cartProducts,
     getProductQuantity,

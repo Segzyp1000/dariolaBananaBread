@@ -12,7 +12,6 @@ import { productArray } from "../App";
 
 const Menu = () => {
   const cart = useContext(CartContext);
-  console.log(cart.items);
   const productImages = {
     "Oreos Banana Bread": Oreos,
     "Chocolate Banana Bread": ChocolateChip,

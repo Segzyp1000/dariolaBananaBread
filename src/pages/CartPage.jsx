@@ -32,38 +32,40 @@ const CartPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mx-auto mt-20 bg-navColor text-white w-1/2 rounded-lg p-auto">
-      <h1 className="font-bold text-2xl bg-white text-navColor mt-6 rounded-lg px-5">
-        Cart Page
-      </h1>
-      {cart.items.map((item, index) => {
-        const productData = productArray.find(
-          (product) => product.id === item.id
-        );
-        return (
-          <div key={index} className="mt-5 mx-auto font-lg">
-            <img src={images[productData.title]} alt={productData.title} />
-
-            <p>Quantity: {item.quantity}</p>
-            <p>Price: ₦{productData.price}.00</p>
-            <p className="bg-black p-2 rounded-lg mt-8">
-              Subtotal: ₦{productData.price * item.quantity}.00
-            </p>
-            <button
-              onClick={() => cart.deleteFromCart(productData.id)}
-              className="bg-removeColor text-white px-1 mt-2 rounded-lg"
-            >
-              Remove
-            </button>
-          </div>
-        );
-      })}
-      <p className="bg-black text-white p-2 mt-12 rounded-lg mb-10">
-        Total Cost: ₦{totalCost}.00
-      </p>
-      <button className="bg-addColor  font-bold px-5 mb-5 rounded-lg text-black">
-        Purchase Item
-      </button>
+    <div className="flex flex-col justify-center items-center mx-auto mt-20 bg-navColor text-white w-3/4 rounded-lg p-auto">
+      <div className="mx-auto">
+        <h1 className="font-bold text-2xl bg-white text-navColor mt-6 rounded-lg px-5">
+          Cart Page
+        </h1>
+        {cart.items.map((item, index) => {
+          const productData = productArray.find(
+            (product) => product.id === item.id
+          );
+          return (
+            <div key={index} className="mt-12 mx-auto font-lg">
+              <img src={images[productData.title]} alt={productData.title} />
+              <p>Product: {productData.title} </p>
+              <p>Quantity: {item.quantity}</p>
+              <p>Price: ₦{productData.price}.00</p>
+              <p className="bg-black  rounded-lg p-2 mt-8">
+                Subtotal: ₦{productData.price * item.quantity}.00
+              </p>
+              <button
+                onClick={() => cart.deleteFromCart(productData.id)}
+                className="bg-removeColor text-white px-1 mt-2 rounded-lg"
+              >
+                Remove
+              </button>
+            </div>
+          );
+        })}
+        <p className="bg-black text-white p-2 mt-12 rounded-lg mb-10">
+          Total Cost: ₦{totalCost}.00
+        </p>
+        <button className="bg-addColor  font-bold px-5 mb-5 rounded-lg text-black">
+          Purchase Item
+        </button>
+      </div>
     </div>
   );
 };

@@ -49,6 +49,12 @@ const CartPage = () => {
             <p className="bg-black p-2 rounded-lg mt-8">
               Subtotal: ₦{productData.price * item.quantity}.00
             </p>
+            <button
+              onClick={() => cart.deleteFromCart(productData.id)}
+              className="bg-removeColor text-white px-1 mt-2 rounded-lg"
+            >
+              Remove
+            </button>
           </div>
         );
       })}

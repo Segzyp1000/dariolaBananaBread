@@ -36,7 +36,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mx-auto mt-20 bg-navColor text-white w-2/3 rounded-lg p-auto">
+    <div className="flex flex-col justify-center items-center mx-auto mt-20 bg-navColor text-white w-auto rounded-lg p-auto">
       <div className="mx-auto">
         <h1 className="font-bold text-2xl  text-white mt-6 rounded-lg px-5">
           Shopping Cart
@@ -53,7 +53,6 @@ const CartPage = () => {
                 className="rounded-full mx-auto"
               />
               <p>Product: {productData.title} </p>
-              <p>Quantity: {item.quantity}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Price: ₦{productData.price}.00</p>
               <p className="rounded-lg p-2 mt-3">

@@ -31,11 +31,15 @@ const CartPage = () => {
     "Cashew Banana Bread": Cashew,
   };
 
+  const handlePurchase = () => {
+    window.location.href = "https://paystack.com/pay/e12whklilw";
+  };
+
   return (
-    <div className="flex flex-col justify-center items-center mx-auto mt-20 bg-navColor text-white w-3/4 rounded-lg p-auto">
+    <div className="flex flex-col justify-center items-center mx-auto mt-20 bg-navColor text-white w-2/3 rounded-lg p-auto">
       <div className="mx-auto">
-        <h1 className="font-bold text-2xl bg-white text-navColor mt-6 rounded-lg px-5">
-          Cart Page
+        <h1 className="font-bold text-2xl  text-white mt-6 rounded-lg px-5">
+          Shopping Cart
         </h1>
         {cart.items.map((item, index) => {
           const productData = productArray.find(
@@ -43,11 +47,16 @@ const CartPage = () => {
           );
           return (
             <div key={index} className="mt-12 mx-auto font-lg">
-              <img src={images[productData.title]} alt={productData.title} />
+              <img
+                src={images[productData.title]}
+                alt={productData.title}
+                className="rounded-full mx-auto"
+              />
               <p>Product: {productData.title} </p>
               <p>Quantity: {item.quantity}</p>
+              <p>Quantity: {item.quantity}</p>
               <p>Price: ₦{productData.price}.00</p>
-              <p className="bg-black  rounded-lg p-2 mt-8">
+              <p className="rounded-lg p-2 mt-3">
                 Subtotal: ₦{productData.price * item.quantity}.00
               </p>
               <button
@@ -59,11 +68,15 @@ const CartPage = () => {
             </div>
           );
         })}
-        <p className="bg-black text-white p-2 mt-12 rounded-lg mb-10">
+        <p className="bg-black text-white p-2 mt-12 rounded-lg mb-10 text-2xl font-bold">
           Total Cost: ₦{totalCost}.00
         </p>
-        <button className="bg-addColor  font-bold px-5 mb-5 rounded-lg text-black">
-          Purchase Item
+        <button
+          className="bg-addColor font-bold px-5 mb-5 rounded-lg text-black"
+          onClick={handlePurchase}
+        >
+          {" "}
+          Purchase Item{" "}
         </button>
       </div>
     </div>

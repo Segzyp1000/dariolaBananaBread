@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import ChocolateChip from "../assets/chocolate-chip.jpeg";
+import ChocolateChip from "../assets/chocolatechip.jpeg";
 import Oreos from "../assets/oreos.jpeg";
+import Oatmeal from "../assets/Oatmeal.jpeg";
+import Blueberry from "../assets/blueberry.jpeg";
+import Raisin from "../assets/raisins.jpeg";
 import Plain from "../assets/plain.jpeg";
-import Mixed from "../assets/mixed-fruit.jpeg";
-import Raisin from "../assets/raisin.jpeg";
-import Marble from "../assets/marble.jpeg";
-import Double from "../assets/double-chocolate.jpeg";
-import Cashew from "../assets/cashew.jpeg";
+import Pineapple from "../assets/pineapple.jpeg";
+import Double from "../assets/doublechocolate.jpeg";
 import { CartContext } from "../CartContext";
 import { productArray } from "../App";
 
@@ -14,13 +14,13 @@ const Menu = () => {
   const cart = useContext(CartContext);
   const productImages = {
     "Oreos Banana Bread": Oreos,
-    "Chocolate Banana Bread": ChocolateChip,
-    "Plain Banana Bread": Plain,
-    "Mixed Nuts Banana Bread": Mixed,
+    "Chocolate-Chip Banana Bread": ChocolateChip,
+    "OatMeal Banana Bread": Oatmeal,
+    "Blueberry Banana Bread": Blueberry,
     "Raisin Banana Bread": Raisin,
-    "Marble Banana Bread": Marble,
-    "Double chocolate Banana": Double,
-    "Cashew Banana Bread": Cashew,
+    "Plain Banana Bread": Plain,
+    "Pineapple Banana": Pineapple,
+    "Double Chocolate Chip Banana Bread": Double,
   };
 
   return (
@@ -32,11 +32,11 @@ const Menu = () => {
         {productArray.map((product, idx) => {
           const productQuantity = cart.getProductQuantity(product.id);
           return (
-            <div key={idx} className="shadow-lg w-auto border-black p-5 gap-3 ">
+            <div key={idx} className="shadow-lg  border-black p-5 gap-3 ">
               <img
                 src={productImages[product.title]}
                 alt={product.title}
-                className="w-auto h-auto rounded-full mb-4"
+                className=" rounded-full mb-4 w-[232px] h-[162px]"
               />
 
               <h1 className="flex justify-start">{product.title}</h1>

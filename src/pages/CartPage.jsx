@@ -2,14 +2,15 @@ import React from "react";
 import { useContext } from "react";
 import { CartContext } from "../CartContext";
 import { productArray } from "../App";
-import ChocolateChip from "../assets/chocolate-chip.jpeg";
+import ChocolateChip from "../assets/chocolatechip.jpeg";
 import Oreos from "../assets/oreos.jpeg";
+import Oatmeal from "../assets/Oatmeal.jpeg";
+import Blueberry from "../assets/blueberry.jpeg";
+import Raisin from "../assets/raisins.jpeg";
 import Plain from "../assets/plain.jpeg";
-import Mixed from "../assets/mixed-fruit.jpeg";
-import Raisin from "../assets/raisin.jpeg";
-import Marble from "../assets/marble.jpeg";
-import Double from "../assets/double-chocolate.jpeg";
-import Cashew from "../assets/cashew.jpeg";
+import Pineapple from "../assets/pineapple.jpeg";
+import Double from "../assets/doublechocolate.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const cart = useContext(CartContext);
@@ -22,23 +23,24 @@ const CartPage = () => {
 
   const images = {
     "Oreos Banana Bread": Oreos,
-    "Chocolate Banana Bread": ChocolateChip,
-    "Plain Banana Bread": Plain,
-    "Mixed Nuts Banana Bread": Mixed,
+    "Chocolate-Chip Banana Bread": ChocolateChip,
+    "OatMeal Banana Bread": Oatmeal,
+    "Blueberry Banana Bread": Blueberry,
     "Raisin Banana Bread": Raisin,
-    "Marble Banana Bread": Marble,
-    "Double chocolate Banana": Double,
-    "Cashew Banana Bread": Cashew,
+    "Plain Banana Bread": Plain,
+    "Pineapple Banana": Pineapple,
+    "Double Chocolate Chip Banana Bread": Double,
   };
 
   const handlePurchase = () => {
-    window.location.href = "https://paystack.com/pay/e12whklilw";
+    const navigate = useNavigate();
+    navigate("https://paystack.com/pay/e12whklilw");
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mx-auto mt-20 bg-navColor text-white w-auto rounded-lg p-auto">
+    <div className="flex flex-col justify-center items-center mx-auto mt-20  text-black w-auto rounded-lg p-auto">
       <div className="mx-auto">
-        <h1 className="font-bold text-2xl  text-white mt-6 rounded-lg px-5">
+        <h1 className="font-bold text-2xl  text-black mt-6 rounded-lg px-5">
           Shopping Cart
         </h1>
         {cart.items.map((item, index) => {
@@ -50,7 +52,7 @@ const CartPage = () => {
               <img
                 src={images[productData.title]}
                 alt={productData.title}
-                className="rounded-full mx-auto"
+                className="rounded-full mx-auto w-[232px] h-[162px]"
               />
               <p>Product: {productData.title} </p>
               <p>Quantity: {item.quantity}</p>
@@ -74,8 +76,7 @@ const CartPage = () => {
           className="bg-addColor font-bold px-5 mb-5 rounded-lg text-black"
           onClick={handlePurchase}
         >
-          {" "}
-          Purchase Item{" "}
+          Purchase Item
         </button>
       </div>
     </div>

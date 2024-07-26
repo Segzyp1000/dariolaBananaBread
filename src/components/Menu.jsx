@@ -75,7 +75,7 @@ const Menu = () => {
               ) : (
                 <button
                   onClick={() => cart.addOneToCart(product.id)}
-                  className="bg-navColor text-white px-1 rounded-lg"
+                  className="bg-red-600 text-white px-1 rounded-lg"
                 >
                   Add to Cart
                 </button>

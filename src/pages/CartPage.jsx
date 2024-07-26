@@ -83,13 +83,13 @@ const CartPage = () => {
       })}
       <div className="max-w-full  flex flex-col ">
         <div>
-          <button className="bg-red-600 text-white px-5 mt-12 rounded-lg mb-10 text-2xl font-bold">
+          <button className="bg-red-600 text-white px-1 mt-12 rounded-lg mb-10 text-2xl font-bold">
             Total Cost: ₦{totalCost}.00
           </button>
         </div>
         <div>
           <button
-            className="bg-blue-700 font-bold px-5 mb-5 rounded-lg text-white"
+            className="bg-blue-700 font-bold px-1 mb-5 rounded-lg text-white"
             onClick={handlePurchase}
           >
             Purchase Item

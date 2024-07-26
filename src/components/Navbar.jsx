@@ -36,7 +36,7 @@ const Navbar = (props) => {
 
         <Link
           to="/cartpage"
-          className="px-2 mx-2 rounded-lg bg-navColor text-white hover:text-black flex gap-2"
+          className="px-1 mx-2 rounded-lg bg-navColor text-white hover:text-black flex gap-2"
         >
           <FaShoppingCart className="mt-1" /> ({productCount} items)
         </Link>
@@ -82,7 +82,7 @@ const Navbar = (props) => {
 
           <Link
             to="/cartpage"
-            className="px-2 rounded-lg bg-navColor text-white hover:text-black"
+            className="px-1 rounded-lg bg-navColor text-white hover:text-black"
           >
             <FaShoppingCart className="mt-1" /> ({productCount} items)
           </Link>

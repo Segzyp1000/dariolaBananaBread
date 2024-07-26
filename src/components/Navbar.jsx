@@ -19,8 +19,8 @@ const Navbar = (props) => {
   );
 
   return (
-    <nav className="flex justify-between items-center p-3">
-      <div className="flex space-x-2">
+    <nav className="flex justify-between items-center p-3 mx-0 md:mx-12">
+      <div className="flex space-x-6">
         <img src={HotPot} alt="" />
         <h1 className="text-navColor font-bold">Dariola Bakery</h1>
       </div>

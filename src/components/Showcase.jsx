@@ -3,7 +3,7 @@ import Banana from "../assets/banana.jpg";
 
 const Showcase = () => {
   return (
-    <div className="flex flex-col-reverse gap-6 md:flex-row mt-20 justify-between items-center mx-20">
+    <div className="flex flex-col-reverse gap-6 md:flex-row mt-20 justify-between items-center mx-12">
       <div>
         <span>
           <h1 className="font-bold text-3xl w-auto">

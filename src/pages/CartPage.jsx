@@ -38,46 +38,63 @@ const CartPage = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center mx-auto mt-20  text-black w-auto rounded-lg p-auto">
-      <div className="mx-auto">
-        <h1 className="font-bold text-2xl  text-black mt-6 rounded-lg px-5">
-          Shopping Cart
-        </h1>
-        {cart.items.map((item, index) => {
-          const productData = productArray.find(
-            (product) => product.id === item.id
-          );
-          return (
-            <div key={index} className="mt-12 mx-auto font-lg">
-              <img
-                src={images[productData.title]}
-                alt={productData.title}
-                className="rounded-full mx-auto w-[232px] h-[162px]"
-              />
-              <p>Product: {productData.title} </p>
-              <p>Quantity: {item.quantity}</p>
-              <p>Price: ₦{productData.price}.00</p>
-              <p className="rounded-lg p-2 mt-3">
-                Subtotal: ₦{productData.price * item.quantity}.00
-              </p>
+    <div className="flex flex-col mt-20  text-black mx-20 ">
+      <h1 className="font-bold text-2xl  text-black mt-6 rounded-lg px-5">
+        Shopping Cart
+      </h1>
+      {cart.items.map((item, index) => {
+        const productData = productArray.find(
+          (product) => product.id === item.id
+        );
+        return (
+          <div
+            key={index}
+            className="mt-12 font-lg md:flex justify-between flex-col"
+          >
+            <div className="flex flex-col">
+              <div className=" mx-12">
+                <img
+                  src={images[productData.title]}
+                  alt={productData.title}
+                  className="rounded-full w-[232px] h-[162px]"
+                />
+              </div>
+              <div className=" mx-12">
+                <p>Product: {productData.title} </p>
+                <p>Quantity: {item.quantity}</p>
+                <p>Price: ₦{productData.price}.00</p>
+                <p className="rounded-lg p-2 mt-3">
+                  Subtotal: ₦{productData.price * item.quantity}.00
+                </p>
+              </div>
+            </div>
+
+            <div>
               <button
                 onClick={() => cart.deleteFromCart(productData.id)}
-                className="bg-removeColor text-white px-1 mt-2 rounded-lg"
+                className="bg-removeColor text-white px-1 mx-12 rounded-lg flex items-center"
               >
                 Remove
               </button>
             </div>
-          );
-        })}
-        <p className="bg-black text-white p-2 mt-12 rounded-lg mb-10 text-2xl font-bold">
-          Total Cost: ₦{totalCost}.00
-        </p>
-        <button
-          className="bg-addColor font-bold px-5 mb-5 rounded-lg text-black"
-          onClick={handlePurchase}
-        >
-          Purchase Item
-        </button>
+            <div className="border-b border-black mt-20 w-auto"></div>
+          </div>
+        );
+      })}
+      <div className="max-w-full  flex flex-col ">
+        <div>
+          <button className="bg-red-600 text-white px-5 mt-12 rounded-lg mb-10 text-2xl font-bold">
+            Total Cost: ₦{totalCost}.00
+          </button>
+        </div>
+        <div>
+          <button
+            className="bg-blue-700 font-bold px-5 mb-5 rounded-lg text-white"
+            onClick={handlePurchase}
+          >
+            Purchase Item
+          </button>
+        </div>
       </div>
     </div>
   );

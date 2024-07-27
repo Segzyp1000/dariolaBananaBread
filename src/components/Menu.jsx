@@ -36,7 +36,7 @@ const Menu = () => {
               <img
                 src={productImages[product.title]}
                 alt={product.title}
-                className=" rounded-full mb-4 w-[232px] h-[162px]"
+                className="bg-slate-400 mb-4 w-[232px] h-[162px]"
               />
 
               <h1 className="flex justify-start">{product.title}</h1>

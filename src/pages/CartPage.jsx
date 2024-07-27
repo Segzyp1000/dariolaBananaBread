@@ -56,7 +56,7 @@ const CartPage = () => {
                 <img
                   src={images[productData.title]}
                   alt={productData.title}
-                  className="rounded-full w-[232px] h-[162px]"
+                  className="w-[150px] h-[132px]"
                 />
               </div>
               <div className=" mx-12">

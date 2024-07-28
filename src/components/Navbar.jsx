@@ -29,10 +29,6 @@ const Navbar = (props) => {
         </div>
 
         <div className="hidden space-x-6 mx-12 p-5 md:flex">
-          <Link to="/" className="text-white font-bold hover:text-slate-400">
-            Home
-          </Link>
-
           <Link to="/contact" className="text-white hover:text-slate-400">
             Order
           </Link>
@@ -76,11 +72,8 @@ const Navbar = (props) => {
         </div>
         {menuOpen && (
           <div className="md:hidden flex flex-col space-y-4  text-white">
-            <Link to="/" onClick={toggleMenu}>
-              Home
-            </Link>
             <Link to="/contact" onClick={toggleMenu}>
-              Contact
+              Order
             </Link>
 
             <Link

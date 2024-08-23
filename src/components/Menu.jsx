@@ -42,44 +42,12 @@ const Menu = () => {
               <h1 className="flex justify-start">{product.title}</h1>
               <p className="font-bold">₦{product.price}</p>
 
-              {productQuantity > 0 ? (
-                <>
-                  <form>
-                    <label htmlFor="add" className="text-navColor">
-                      Add Item:{productQuantity}
-                    </label>
-                    <button
-                      type="button"
-                      href="#"
-                      onClick={() => cart.addOneToCart(product.id)}
-                      className="bg-addColor text-white px-2 ml-8"
-                    >
-                      +
-                    </button>
-                    <button
-                      type="button"
-                      href="#"
-                      onClick={() => cart.removeOneFromCart(product.id)}
-                      className="bg-black text-white px-2"
-                    >
-                      -
-                    </button>
-                  </form>
-                  <button
-                    onClick={() => cart.deleteFromCart(product.id)}
-                    className="bg-removeColor text-white px-1 mt-2 rounded-lg"
-                  >
-                    Remove
-                  </button>
-                </>
-              ) : (
-                <button
-                  onClick={() => cart.addOneToCart(product.id)}
-                  className="bg-red-600 text-white px-1 rounded-lg"
-                >
-                  Add to Cart
-                </button>
-              )}
+              <button
+                onClick={() => cart.addOneToCart(product.id)}
+                className="bg-red-600 text-white px-1 rounded-lg"
+              >
+                Add to Cart
+              </button>
             </div>
           );
         })}

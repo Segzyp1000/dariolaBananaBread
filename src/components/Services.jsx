@@ -12,8 +12,8 @@ const Services = () => {
       <div>
         <h2 className="font-bold text-3xl">What we serve:</h2>
       </div>
-      <div className="flex justify-between space-x-12 max-w-full  md:w-[900px] mt-10">
-        <div className="md:w-[367px] w-auto h-auto md:h-[346px]">
+      <div className="flex justify-between space-x-12 max-w-full flex-wrap mt-10">
+        <div className="md:w-[367px] w-auto md:ml-0 ml-10 h-auto md:h-[346px]">
           <img src={Order} alt="" />
           <p className="mt-10 font-semibold">Easy to order</p>
           <p>You only need a few steps in ordering our bread</p>

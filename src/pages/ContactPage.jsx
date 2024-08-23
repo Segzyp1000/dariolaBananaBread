@@ -1,12 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const ContactPage = () => {
   return (
     <div className="flex flex-col mt-10">
-      <Link to="/" className="text-navColor font-bold hover:text-slate-400 p-6">
-        Back to the Home page
-      </Link>
       <form
         className="mt-10"
         action="https://formspree.io/f/mayrrwje"

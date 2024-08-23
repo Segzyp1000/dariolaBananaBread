@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const cart = useContext(CartContext);
+  const navigate = useNavigate();
   const totalCost = cart.items.reduce((acc, current) => {
     const productData = productArray.find(
       (product) => product.id === current.id
@@ -33,69 +34,85 @@ const CartPage = () => {
   };
 
   const handlePurchase = () => {
-    const navigate = useNavigate();
-    navigate("https://paystack.com/pay/e12whklilw");
+    alert("Your item is being processed");
+    navigate("/");
+    window.location.reload();
   };
 
   return (
-    <div className="flex flex-col mt-20  text-black mx-20 ">
-      <h1 className="font-bold text-2xl  text-black mt-6 rounded-lg px-5">
-        Shopping Cart
-      </h1>
-      {cart.items.map((item, index) => {
-        const productData = productArray.find(
-          (product) => product.id === item.id
-        );
-        return (
-          <div
-            key={index}
-            className="mt-12 font-lg md:flex justify-between flex-col"
-          >
-            <div className="flex flex-col">
-              <div className=" mx-12">
-                <img
-                  src={images[productData.title]}
-                  alt={productData.title}
-                  className="w-[150px] h-[132px]"
-                />
-              </div>
-              <div className=" mx-12">
-                <p>Product: {productData.title} </p>
-                <p>Quantity: {item.quantity}</p>
-                <p>Price: ₦{productData.price}.00</p>
-                <p className="rounded-lg p-2 mt-3">
-                  Subtotal: ₦{productData.price * item.quantity}.00
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <button
-                onClick={() => cart.deleteFromCart(productData.id)}
-                className="bg-removeColor text-white px-1 mx-12 rounded-lg flex items-center"
+    <div className="container md:mx-10 mx-5 mt-20 mb-5 w-full block space-y-12">
+      {cart.items.length > 0 ? (
+        <div>
+          <h1 className="text-3xl font-bold mb-6 mt-10">Your Cart</h1>
+          {cart.items.map((item, index) => {
+            const productData = productArray.find(
+              (product) => product.id === item.id
+            );
+            return (
+              <div
+                key={index}
+                className="mt-12 font-lg md:flex justify-between "
               >
-                Remove
-              </button>
-            </div>
-            <div className="border-b border-black mt-20 w-auto"></div>
+                <div className="flex">
+                  <div className="mx-2">
+                    <img
+                      src={images[productData.title]}
+                      alt={productData.title}
+                      className="w-[150px] h-[132px]"
+                    />
+                  </div>
+                  <div className="mx-2">
+                    <p>Product: {productData.title}</p>
+                    <p>Quantity: {item.quantity}</p>
+                    <p>Price: ₦{productData.price}.00</p>
+                    <p className="rounded-lg p-2 mt-3">
+                      Subtotal: ₦{productData.price * item.quantity}.00
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-2 mt-10 space-x-2">
+                  <button
+                    onClick={() => cart.addOneToCart(item.id)}
+                    className="bg-yellow-500 text-white px-2 py-1 rounded"
+                  >
+                    +
+                  </button>
+                  <button className="bg-white text-black px-2 py-1 rounded">
+                    {item.quantity}
+                  </button>
+                  <button
+                    onClick={() => cart.removeOneFromCart(item.id)}
+                    className="bg-navColor text-white px-2 py-1 rounded"
+                  >
+                    -
+                  </button>
+                  <button
+                    onClick={() => cart.deleteFromCart(item.id)}
+                    className="bg-red-500 text-white px-2 py-1 rounded"
+                  >
+                    Remove
+                  </button>
+                </div>
+                <div className="border-b border-black mt-20 w-auto"></div>
+              </div>
+            );
+          })}
+
+          <div className="flex flex-col flex-start items-start w-auto ">
+            <button className="text-black px-1 mt-12 rounded-lg mb-10 text-2xl font-bold">
+              Total Cost: ₦{totalCost}.00
+            </button>
+            <button
+              onClick={handlePurchase}
+              className="bg-blue-700 font-bold px-1 mb-5 rounded-lg text-white"
+            >
+              Purchase Item
+            </button>
           </div>
-        );
-      })}
-      <div className="max-w-full  flex flex-col ">
-        <div>
-          <button className="text-black px-1 mt-12 rounded-lg mb-10 text-2xl font-bold">
-            Total Cost: ₦{totalCost}.00
-          </button>
         </div>
-        <div>
-          <button
-            className="bg-blue-700 font-bold px-1 mb-5 rounded-lg text-white"
-            onClick={handlePurchase}
-          >
-            Purchase Item
-          </button>
-        </div>
-      </div>
+      ) : (
+        <p className="font-semibold text-2xl space-y-12">Your cart is empty.</p>
+      )}
     </div>
   );
 };

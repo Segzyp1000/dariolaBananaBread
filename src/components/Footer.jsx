@@ -6,12 +6,14 @@ import { FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-500 text-white">
-      <div className="mx-0 md:mx-12 flex justify-between mt-36 items-center w-auto  p-auto">
+    <div className="bg-gray-500 text-white mt-24">
+      <div className="container mx-auto flex justify-between items-center py-7">
         <div>
-          <p className="p-2 ml-12">© 2024 Dariola Bakery coded by SegzyP</p>
+          <p className="text-sm md:font-normal font-light">
+            &copy; 2024 Dariola Bakery. Coded by SegzyP
+          </p>
         </div>
-        <div className="flex mx-12 space-x-5">
+        <div className="flex md:space-x-6 space-x-3">
           <a href="">
             <FaFacebookF />
           </a>

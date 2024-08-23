@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container mx-auto flex justify-between items-center py-7">
         <div>
           <p className="text-sm md:font-normal font-light">
-            &copy; 2024 Dariola Bakery. Coded by SegzyP
+            &copy; 2024 Dariola Bakery
           </p>
         </div>
         <div className="flex md:space-x-6 space-x-3">

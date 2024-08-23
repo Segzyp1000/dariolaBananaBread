@@ -25,7 +25,7 @@ const Menu = () => {
 
   return (
     <div id="menu">
-      <div className="text-4xl font-bold flex justify-start items-center px-12 mt-20 mx-12">
+      <div className="text-4xl font-bold flex justify-center items-center px-12 mt-36 mx-12 text-center">
         Our Menu
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 w-3/4 mx-auto">

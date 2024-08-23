@@ -40,7 +40,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="container md:mx-10 mx-5 mt-20 mb-5 w-full block space-y-12">
+    <div className="container mx-auto  mt-20 ml-12 mb-12 block space-y-12">
       {cart.items.length > 0 ? (
         <div>
           <h1 className="text-3xl font-bold mb-6 mt-10">Your Cart</h1>
@@ -51,7 +51,7 @@ const CartPage = () => {
             return (
               <div
                 key={index}
-                className="mt-12 font-lg md:flex justify-between "
+                className="mt-12 font-lg md:flex justify-between items-center"
               >
                 <div className="flex">
                   <div className="mx-2">

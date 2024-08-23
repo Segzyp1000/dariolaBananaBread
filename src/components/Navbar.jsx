@@ -7,10 +7,10 @@ import { CartContext } from "../CartContext";
 const Navbar = (props) => {
   const cart = useContext(CartContext);
 
-  const productCount = cart.items.reduce(
-    (sum, product) => sum + product.quantity,
-    0
-  );
+  const productCount =
+    cart.items.length > 0
+      ? cart.items.reduce((sum, product) => sum + product.quantity, 0)
+      : "";
 
   return (
     <div className="navb bg-blue-500 w-full block fixed">
@@ -31,7 +31,7 @@ const Navbar = (props) => {
             to="/cartpage"
             className="px-1 mx-2 rounded-lg bg-navColor text-white hover:text-black flex gap-2"
           >
-            <span className="flex bg-white text-blue-800 rounded-lg px-1">
+            <span className="flex bg-white text-blue-800 rounded-lg p-1">
               <FaShoppingCart /> {productCount}
             </span>
           </Link>

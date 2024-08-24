@@ -111,7 +111,7 @@ const CartPage = () => {
           </div>
         </div>
       ) : (
-        <p className="font-semibold text-2xl space-y-12">Your cart is empty.</p>
+        <p className=" space-y-12">Your cart is empty.</p>
       )}
     </div>
   );

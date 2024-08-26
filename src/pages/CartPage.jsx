@@ -41,9 +41,11 @@ const CartPage = () => {
 
   return (
     <div className="container mx-auto  mt-20 ml-12 mb-12 block space-y-12">
+      <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-800mb-6 mt-10">
+        Your Cart
+      </h1>
       {cart.items.length > 0 ? (
         <div>
-          <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-gray-800"mb-6 mt-10">Your Cart</h1>
           {cart.items.map((item, index) => {
             const productData = productArray.find(
               (product) => product.id === item.id
